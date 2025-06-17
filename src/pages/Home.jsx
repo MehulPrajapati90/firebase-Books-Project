@@ -12,13 +12,18 @@ const Home = () => {
   console.log(data);
 
   useEffect(() => {
+
     firebase.HandleGetListing().then((res) => {
       setData(res.docs.map((doc) => {
         return {...doc.data(), id: doc.id};
       }));
       setLoading(false);
     });
-  }, []);
+  }, [firebase.isLoggedIn]);
+
+  if(data.length === 0 || firebase.isLoggedIn === false){
+    return <div>Loading....</div>
+  }
 
   return (
     <div className='min-h-screen w-full bg-slate-800 text-white flex flex-col gap-5 p-5'>

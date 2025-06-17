@@ -14,6 +14,12 @@ const ContentDetails = () => {
             console.log(res.data());
         });
     }, [params.id, firebase]);
+
+    if (Object.keys(data).length === 0 || firebase.isLoggedIn === false) {
+        return <div>Loading....</div>
+    }
+
+
     return (
         <div className='min-h-screen w-full bg-slate-800 text-white flex flex-col gap-5 p-5'>
             <h1 className='text-2xl font-bold'>ContentDetails!</h1>
