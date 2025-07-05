@@ -5,7 +5,7 @@ import { getFirestore, collection, addDoc, getDocs, doc, getDoc } from "firebase
 
 const FirebaseContext = createContext(null);
 const firebaseConfig = {
-    apiKey: "AIzaSyAWA3rb5sjOjgTMjtw9dK93NcXRD9RSS-o",
+    apiKey: "",
     authDomain: "bookstore-6617e.firebaseapp.com",
     projectId: "bookstore-6617e",
     storageBucket: "bookstore-6617e.firebasestorage.app",
